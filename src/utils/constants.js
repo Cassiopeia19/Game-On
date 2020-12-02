@@ -42,6 +42,6 @@ export const services = [
   },
 ]
 
-export const products_url = 'https://course-api.com/react-store-products'
+export const products_url = 'https://api.boardgameatlas.com/api/lists?'
 
-export const single_product_url = `https://course-api.com/react-store-single-product?id=`
+export const single_product_url = `https://api.boardgameatlas.com/api/lists?/exact`
