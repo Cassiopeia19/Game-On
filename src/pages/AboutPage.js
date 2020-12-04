@@ -1,10 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageHero } from '../components'
-import aboutImg from '../assets/heroBcg.jpg'
+import aboutImg from '../assets/aboutImg.jpg'
 
 const AboutPage = () => {
-  return <h4>about page</h4>
+  return (
+    <main>
+      <PageHero title='about'/>
+      <Wrapper className="page section section-center">
+        <img src={aboutImg} alt="game pieces" />
+        <article>
+          <div className='title'>
+            <h2>our story</h2>
+            <div className='underline'></div>
+          </div>
+          <p>This is a fictitious website, so no 
+            actual purchases of games can be made.
+            The sole purpose of the creation of this
+            site was to keep practicing on my react
+            skills.
+          </p>
+        </article>
+      </Wrapper>  
+    </main>
+  )
 }
 
 const Wrapper = styled.section`
