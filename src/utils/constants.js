@@ -47,6 +47,6 @@ export const services = [
   },
 ]
 
-export const products_url = 'https://api.boardgameatlas.com/api/lists?'
+// export const products_url = 'https://api.boardgameatlas.com/api/lists?'
 
-export const single_product_url = `https://api.boardgameatlas.com/api/lists?/exact`
+// export const single_product_url = `https://api.boardgameatlas.com/api/lists?/exact`
