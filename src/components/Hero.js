@@ -4,10 +4,28 @@ import { Link } from 'react-router-dom'
 import heroBcg from '../assets/heroBcg.jpg'
 import heroBcg2 from '../assets/heroBcg2.jpg'
 
-const Hero = () => {
-  return <h4>hero</h4>
-}
-
+ const Hero = () => {
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>create your <br />playbook</h1>
+        <p>The possibilities are endless!  Gametime offers a 
+          wide variety of games for you to choose from.  Allow
+          your inner-child the opportunity to delight in the fun
+          that playing games brings. Bond with friends and family
+          with every move that is made.
+        </p>
+        <Link to='/products' className="btn hero-btn">
+          shop now
+        </Link>
+      </article>
+      <article className='img-container'>
+        <img src={heroBcg} alt="" className="main-img"/>
+        <img src={heroBcg2} alt="" className="accent-img"/>
+      </article>
+    </Wrapper>
+   )
+  }
 const Wrapper = styled.section`
   min-height: 60vh;
   display: grid;
@@ -61,7 +79,7 @@ const Wrapper = styled.section`
       position: absolute;
       width: 10%;
       height: 80%;
-      background: var(--clr-primary-9);
+      background: var(--clr-primary-7);
       bottom: 0%;
       left: -8%;
       border-radius: var(--radius);
@@ -69,4 +87,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default Hero
+ export default Hero

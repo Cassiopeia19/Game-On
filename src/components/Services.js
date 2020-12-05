@@ -3,7 +3,32 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
-  return <h4>services </h4>
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <article className="header">
+          <h3>custom games <br/>
+          selected just for you</h3>
+          <p>We have chosen to offer up 1000's of
+            games, so that we could provide
+            only the best variety to you.
+          </p>
+        </article>
+        <div className="services-center">
+         {services.map((service) => {
+           const { id, icon, title, text } = service
+           return (
+             <article key={id} className='service'>
+               <span className='icon'>{icon}</span>
+               <h4>{title}</h4>
+               <p>{text}</p>
+             </article>
+           )
+         })}     
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -27,7 +52,7 @@ const Wrapper = styled.section`
     gap: 2.5rem;
   }
   .service {
-    background: var(--clr-primary-7);
+    background: var(--clr-green-light);
     text-align: center;
     padding: 2.5rem 2rem;
     border-radius: var(--radius);
