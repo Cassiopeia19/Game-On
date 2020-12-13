@@ -6,9 +6,7 @@ import { formatPrice } from '../utils/helpers'
 import {
   Loading,
   Error,
-  ProductImages,
   AddToCart,
-  Stars,
   PageHero,
 } from '../components'
 import styled from 'styled-components'
@@ -35,7 +33,56 @@ const SingleProductPage = () => {
       },3000)
     }
   },[error])
-  return <h4>single product page</h4>
+  if(loading) {
+    return <Loading />
+  }
+  if(error) {
+    return <Error />
+  }
+  const {
+    name,
+    price,
+    description,
+    description_preview,
+    min_players,
+    min_playtime,
+    average_user_rating,
+    primary_publisher,
+    id:sku} = product
+  console.log(product)
+  return (
+    <Wrapper>
+      <PageHero title={name} product />
+     <div className="section section-center page">
+        <Link to='/products' className="btn">
+          back to games
+        </Link>
+      <section className="content">
+        <h2>{name}</h2>
+        <p className="info">
+          <span>Avg user rating : {average_user_rating}</span>
+          </p>
+        <h5 className="price">{formatPrice(price)}</h5>
+        <p className="desc">{description}</p>
+        <p className="desc">{description_preview}</p>
+        <p className="info">
+          <span>Min players : {min_players}</span>
+          </p>
+        <p className="info">
+          <span>Min playtime : {min_playtime}</span>
+          </p>
+        <p className="info">
+          <span>SKU : {sku}</span>
+           </p>
+        <p className="info">
+            <span>Publisher : {primary_publisher}</span>
+            </p>
+            <hr />
+          <AddToCart product={product}/>
+      </section>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`

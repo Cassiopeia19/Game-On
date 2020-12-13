@@ -49,4 +49,4 @@ export const services = [
 
 export const products_url = `https://api.boardgameatlas.com/api/search?client_id= dVxW0FpIBH`
 
-export const single_product_url = `https://api.boardgameatlas.com/api//search?client_id= dVxW0FpIBH&ids`
+export const single_product_url = `https://api.boardgameatlas.com/api/search?client_id=dVxW0FpIBH&ids`

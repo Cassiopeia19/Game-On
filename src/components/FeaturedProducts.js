@@ -18,7 +18,8 @@ const FeaturedProducts = () => {
   if(error) {
     return <Error />
   }
-  return <Wrapper className="section">
+  return (
+  <Wrapper className="section">
     <div className='title'>
       <h2>featured games</h2>
       <div className="underline"></div>
@@ -29,6 +30,7 @@ const FeaturedProducts = () => {
       })}
     </div>
   </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
