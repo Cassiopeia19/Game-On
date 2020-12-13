@@ -4,17 +4,17 @@ import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-const Product = ({image,name,price,id}) => {
+const Product = ({image_url,name,price,id}) => {
   return <Wrapper>
     <div className="container">
-      <img src={image} alt={name} />
+      <img src={image_url} alt={name} />
       <Link to={`/products/${id}`} className="link">
         <FaSearch />
       </Link>
     </div>
     <footer>
       <h5>{name}</h5>
-      <p>{price}</p>
+      <p>{formatPrice(price)}</p>
     </footer>
   </Wrapper>
 }
