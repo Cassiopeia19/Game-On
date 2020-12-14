@@ -66,16 +66,16 @@ const SingleProductPage = () => {
         <p className="desc">{description}</p>
         <p className="desc">{description_preview}</p>
         <p className="info">
-          <span>Min players : {min_players}</span>
+          <span>min players : {min_players}</span>
           </p>
         <p className="info">
-          <span>Min playtime : {min_playtime}</span>
+          <span>min playtime : {min_playtime}</span>
           </p>
         <p className="info">
           <span>SKU : {sku}</span>
            </p>
         <p className="info">
-            <span>Publisher : {primary_publisher}</span>
+            <span>publisher : {primary_publisher}</span>
             </p>
             <hr />
           <AddToCart product={product}/>

@@ -14,7 +14,7 @@ const AboutPage = () => {
             <h2>our story</h2>
             <div className='underline'></div>
           </div>
-          <p>This is a fictitious website, so no 
+          <p>This is a fictitious ecommerce website, so no 
             actual purchases of games can be made.
             The sole purpose of the creation of this
             site was to keep practicing on my react

@@ -7,7 +7,7 @@ import AmountButtons from './AmountButtons'
 import products_reducer from '../reducers/products_reducer'
 
 const AddToCart = (product) => {
-  const {id}= product
+ // const {id}= product
 
   const [amount,setAmount] = useState(1);
 
