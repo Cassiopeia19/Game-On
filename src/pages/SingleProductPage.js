@@ -75,7 +75,7 @@ const SingleProductPage = () => {
           <span>SKU : {sku}</span>
            </p>
         <p className="info">
-            <span>publisher : {primary_publisher}</span>
+            <span>publisher : {primary_publisher?.name}</span>
             </p>
             <hr />
           <AddToCart product={product}/>
