@@ -9,8 +9,7 @@ const Services = () => {
         <article className="header">
           <h3>custom games <br/>
           selected just for you</h3>
-          <p>We have chosen to offer up 1000's of
-            games, so that we could provide
+          <p>We have chosen to offer 100 games, so that we could provide
             only the best variety to you.
           </p>
         </article>

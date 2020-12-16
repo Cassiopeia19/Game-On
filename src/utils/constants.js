@@ -13,8 +13,8 @@ export const links = [
   },
   {
     id: 3,
-    text: 'products',
-    url: '/products',
+    text: 'games',
+    url: '/games',
   },
   {
     id: 4,

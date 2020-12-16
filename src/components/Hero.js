@@ -15,7 +15,7 @@ import heroBcg2 from '../assets/heroBcg2.jpg'
           that playing games brings. Bond with friends and family
           with every move that is made.
         </p>
-        <Link to='/products' className="btn hero-btn">
+        <Link to='/games' className="btn hero-btn">
           shop now
         </Link>
       </article>

@@ -19,7 +19,6 @@ const AddToCart = (product) => {
   }
 
   const decrease = () => {
-
   setAmount((oldAmount) => {
     let tempAmount = oldAmount - 1 
     if(tempAmount < 1) {
@@ -31,18 +30,18 @@ const AddToCart = (product) => {
 
   
   return (
-    <Wrapper>
-<div className='btn-container'>
-  <AmountButtons
-  amount={amount}
-  increase={increase}
-  decrease={decrease} 
-  />
-  <Link to="/cart" className="btn">
-    add to cart
-  </Link>
-</div>
-    </Wrapper>
+<Wrapper>
+  <div className='btn-container'>
+    <AmountButtons
+    amount={amount}
+    increase={increase}
+    decrease={decrease} 
+    />
+    <Link to="/cart" className="btn">
+      add to cart
+    </Link>
+  </div>
+</Wrapper>
   )
 }
 

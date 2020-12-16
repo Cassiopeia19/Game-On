@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useReducer } from 'react'
 import reducer from '../reducers/products_reducer'
-import { products_url as url } from '../utils/constants'
+import { products_url as url } from '../utils/constants' 
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -19,8 +19,8 @@ const initialState = {
   products_error:false,
   products:[],
   featured_products:[],
-  single_product_loading:false,
   single_product_error:false,
+  single_product_loading:false,
   single_product:{},
 }
 
@@ -52,7 +52,7 @@ export const ProductsProvider = ({ children }) => {
     dispatch({type:GET_SINGLE_PRODUCT_BEGIN});
     try{
       const response = await axios.get(url);
-      const singleProduct = response.data;
+      const [singleProduct] = response.data.games;
       dispatch({type:GET_SINGLE_PRODUCT_SUCCESS, 
         payload: singleProduct})
     }catch(error) {

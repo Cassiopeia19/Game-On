@@ -13,7 +13,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const SingleProductPage = () => {
-  const {id} = useParams()
+  const {id} = useParams();
   const history = useHistory()
   const {
     single_product_loading:loading,
@@ -25,6 +25,7 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
   }, [id])
+ 
   useEffect(() => {
     console.log(error)
     if(error) {
@@ -33,38 +34,46 @@ const SingleProductPage = () => {
       },3000)
     }
   },[error])
-  if(loading) {
+   if(loading) {
     return <Loading />
   }
   if(error) {
     return <Error />
   }
   const {
+    image_url,
+    average_user_rating,
     name,
     price,
     description,
     description_preview,
+    min_age,
     min_players,
     min_playtime,
-    average_user_rating,
-    primary_publisher,
-    id:sku} = product
+    id:sku,
+    primary_publisher} = product
+
   console.log(product)
+  
   return (
     <Wrapper>
       <PageHero title={name} product />
      <div className="section section-center page">
-        <Link to='/products' className="btn">
+        <Link to='/games' className="btn">
           back to games
         </Link>
-      <section className="content">
+        <div className="product-center">
+        <section className="content">
+        <img src={image_url} style={{width: "600px",height:"500px"}} alt={name} />
         <h2>{name}</h2>
         <p className="info">
-          <span>Avg user rating : {average_user_rating}</span>
+          <span>Avg user rating {Math.round(average_user_rating*100)/100}</span>
           </p>
         <h5 className="price">{formatPrice(price)}</h5>
-        <p className="desc">{description}</p>
         <p className="desc">{description_preview}</p>
+        <p className="info">
+          <span>min age : {min_age}</span>
+          </p>
         <p className="info">
           <span>min players : {min_players}</span>
           </p>
@@ -74,12 +83,13 @@ const SingleProductPage = () => {
         <p className="info">
           <span>SKU : {sku}</span>
            </p>
-        <p className="info">
-            <span>publisher : {primary_publisher}</span>
-            </p>
+           <p className="info">
+          <span>publisher : {primary_publisher?.name}</span>
+           </p>
             <hr />
           <AddToCart product={product}/>
       </section>
+        </div>
       </div>
     </Wrapper>
   )
