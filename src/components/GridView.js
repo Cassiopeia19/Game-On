@@ -11,7 +11,7 @@ const GridView = ({ products }) => {
         })}
       </div>
     </Wrapper>
-  )
+ )
 }
 
 const Wrapper = styled.section`
