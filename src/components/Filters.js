@@ -5,7 +5,58 @@ import { getUniqueValues, formatPrice } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
 
 const Filters = () => {
-  return <h4>filters</h4>
+  const {
+    filters: {
+      text,
+      min_age,
+      year_published,
+      min_price,
+      max_price,
+      price
+    },
+    updateFilters,
+    clearFilters,
+    all_products,
+  } = useFilterContext()
+
+  const minAge = getUniqueValues(all_products,'min_age')
+  const yearPublished = getUniqueValues(all_products,'year_published')
+ 
+  return (
+    <Wrapper>
+      <div className="content">
+        <form onSubmit={(e) => e.preventDefault()}>
+          {/* search input */}
+          <input 
+          type="text" 
+          name="text" 
+          placeholder="search" 
+          className="search-input"
+          value={text}
+          onChange={updateFilters}
+          />
+        </form>
+      </div>
+      {/* end search input */}
+      {/* minAge */}
+      <div className='form-control'>
+        <h5>minimum age</h5>
+        <div>
+          {
+            minAge.map((c,index) => {
+              return <button key={index}
+              onClick={updateFilters}
+              type="button"
+              name="min_age"
+              className={`${
+                minAge === minAge ?'active':null}`}
+              >{c}</button>
+            })
+          }
+        </div>
+        </div>{/* end of minAge */}
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
