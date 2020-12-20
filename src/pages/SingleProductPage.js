@@ -49,7 +49,9 @@ const SingleProductPage = () => {
     description_preview,
     min_age,
     min_players,
+    max_players,
     min_playtime,
+    max_playtime,
     id:sku,
     primary_publisher} = product
 
@@ -75,10 +77,10 @@ const SingleProductPage = () => {
           <span>min age : {min_age}</span>
           </p>
         <p className="info">
-          <span>min players : {min_players}</span>
+          <span>players : {min_players} - {max_players}</span>
           </p>
         <p className="info">
-          <span>min playtime : {min_playtime}</span>
+          <span>playtime : {min_playtime} - {max_playtime} minutes</span>
           </p>
         <p className="info">
           <span>SKU : {sku}</span>
