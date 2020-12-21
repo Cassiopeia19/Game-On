@@ -62,6 +62,9 @@ export const FilterProvider = ({ children }) => {
   if(name === 'min_age') {
    value = e.target.textContent
  }
+ if(name === 'price') {
+   value=Number(value)
+ }
   dispatch({type:UPDATE_FILTERS,payload:{name,value}})
  }
 

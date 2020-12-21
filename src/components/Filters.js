@@ -48,13 +48,41 @@ const Filters = () => {
                   onClick={updateFilters}
                   type="button"
                   name="min_age"
-                  className={`${minAge ?'active':null}`}
+                  className={`${min_age === c.toString() ?'active':null}`}
               >{c}</button>
             })
           }
         </div>
         </div>
         {/* end of minAge */}
+        {/* year published */}
+        <div className="form-control">
+          <h5>year published</h5>
+          <select name="year_published" value={year_published}
+           onChange={updateFilters} className="yearPublished">e
+             {yearPublished?.map((c,index)=> {
+               return <option key={index} value={c}>
+                 {c}
+               </option>
+             })}
+
+          </select>
+        </div>
+        {/* end of year published */}
+        {/* price */}
+        <div className="form-control">
+          <h5>price</h5>
+          <p className="price">{formatPrice(price)}</p>
+          <input 
+          type="range" 
+          name="price" 
+          onChange={updateFilters} 
+          min={min_price} 
+          max={max_price}
+          value={price}
+          />
+        </div>
+        {/* end of price */}
     </Wrapper>
   )
 }
@@ -91,7 +119,7 @@ const Wrapper = styled.section`
   .active {
     border-color: var(--clr-grey-5);
   }
-  .company {
+  .yearPublished {
     background: var(--clr-grey-10);
     border-radius: var(--radius);
     border-color: transparent;
