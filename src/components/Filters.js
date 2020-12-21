@@ -45,16 +45,16 @@ const Filters = () => {
           {
             minAge.map((c,index) => {
               return <button key={index}
-              onClick={updateFilters}
-              type="button"
-              name="min_age"
-              className={`${
-                minAge === minAge ?'active':null}`}
+                  onClick={updateFilters}
+                  type="button"
+                  name="min_age"
+                  className={`${minAge ?'active':null}`}
               >{c}</button>
             })
           }
         </div>
-        </div>{/* end of minAge */}
+        </div>
+        {/* end of minAge */}
     </Wrapper>
   )
 }
