@@ -10,9 +10,9 @@ import heroBcg2 from '../assets/heroBcg2.jpg'
       <article className="content">
         <h1>create your <br />playbook</h1>
         <p>The possibilities are endless!  Gametime offers a 
-          wide variety of games for you to choose from.  Allow
+          wide variety of board games for you to choose from.  Allow
           your inner-child the opportunity to delight in the fun
-          that playing games brings. Bond with friends and family
+          that playing board games brings. Bond with friends and family
           with every move that is made.
         </p>
         <Link to='/games' className="btn hero-btn">

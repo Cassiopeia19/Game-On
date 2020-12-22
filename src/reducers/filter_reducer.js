@@ -58,11 +58,22 @@ const prices = action.payload.games.map((p) => p.price);
   }
   if(action.type === UPDATE_FILTERS) {
     const {name,value} = action.payload
-    return{...state,filters:{...state.filters,[name]:value}}
+    return {...state,filters:{...state.filters,[name]:value}}
   }
   if(action.type === FILTER_PRODUCTS) {
-    //console.log('filtering products')
+    console.log('filtering products')
     return {...state}
+  }
+  if(action.type === CLEAR_FILTERS) {
+    return {
+      ...state.filters,
+       filters: {
+          text:'',
+          min_age:'all',
+          year_published:'all',
+          price:state.filters.max_price
+  },
+    }
   }
   throw new Error(`No Matching "${action.type}" - action type`)
 }

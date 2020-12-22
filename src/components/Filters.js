@@ -24,8 +24,9 @@ const Filters = () => {
  
   return (
     <Wrapper>
+      <form onSubmit={(e) => e.preventDefault()}>
       <div className="content">
-        <form onSubmit={(e) => e.preventDefault()}>
+        
           {/* search input */}
           <input 
           type="text" 
@@ -35,7 +36,6 @@ const Filters = () => {
           value={text}
           onChange={updateFilters}
           />
-        </form>
       </div>
       {/* end search input */}
       {/* minAge */}
@@ -83,6 +83,11 @@ const Filters = () => {
           />
         </div>
         {/* end of price */}
+        </form>
+        <button type="button" className="clear-btn" onClick={clearFilters}>
+          clear filters
+          {' '}
+        </button>
     </Wrapper>
   )
 }

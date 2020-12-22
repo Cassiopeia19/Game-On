@@ -9,6 +9,11 @@ export const formatPrice = (number) => {
 }
 
 export const getUniqueValues = (data,type) => {
-    let unique = data.games?.map((item) => item[type])
-    return['all', ...new Set(unique)]
+  if (!data.games?.length) {
+    return [];
+  }
+  let unique = data
+    .games.map((item) => item[type])
+    .sort((a, b) => a - b);
+  return['All', ...new Set(unique)];
 }

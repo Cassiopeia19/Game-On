@@ -60,7 +60,10 @@ export const FilterProvider = ({ children }) => {
   let name = e.target.name
   let value = e.target.value
   if(name === 'min_age') {
-   value = e.target.textContent
+    value = parseInt(e.target.textContent) || e.target.textContent
+ }
+ if(name === 'year_published') {
+   value = Number(value) || e.target.value
  }
  if(name === 'price') {
    value=Number(value)
@@ -69,7 +72,7 @@ export const FilterProvider = ({ children }) => {
  }
 
  const clearFilters = () => {
-
+  dispatch({type:CLEAR_FILTERS})
  }
 
   return (
