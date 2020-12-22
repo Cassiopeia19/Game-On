@@ -48,7 +48,7 @@ const Filters = () => {
                   onClick={updateFilters}
                   type="button"
                   name="min_age"
-                  className={`${min_age === c.toString() ?'active':null}`}
+                  className={`${min_age === c ?'active':null}`}
               >{c}</button>
             })
           }

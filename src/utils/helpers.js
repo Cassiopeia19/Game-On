@@ -15,23 +15,5 @@ export const getUniqueValues = (data,type) => {
   let unique = data
     .games.map((item) => item[type])
     .sort((a, b) => a - b);
-  return['All', ...new Set(unique)];
+  return['all', ...new Set(unique)];
 }
-
-// for localhost
-  // "scripts": {
-  //   "start": "react-scripts start",
-  //   "build": "react-scripts build",
-  //   "test": "react-scripts test",
-  //   "eject": "react-scripts eject"
-  // },
-  
-//needed for deployed app
-// "scripts": {
-//   "dev": "react-scripts start",
-//   "start": "serve -s build",
-//   "build": "react-scripts build",
-//   "test": "react-scripts test --env=jsdom",
-//   "eject": "react-scripts eject",
-//   "heroku-postbuild": "npm run build"
-//   },
