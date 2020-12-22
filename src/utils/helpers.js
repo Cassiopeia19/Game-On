@@ -26,12 +26,12 @@ export const getUniqueValues = (data,type) => {
   //   "eject": "react-scripts eject"
   // },
   
-//for live app
-//   "scripts": {
-//   "start": "set PORT=4200 && react-scripts start",
+//needed for deployed app
+// "scripts": {
+//   "dev": "react-scripts start",
+//   "start": "serve -s build",
 //   "build": "react-scripts build",
-//   "test": "react-scripts test",
+//   "test": "react-scripts test --env=jsdom",
 //   "eject": "react-scripts eject",
-//   "predeploy": "npm run build",
-//   "deploy": "gh-pages -d build"
-// },
+//   "heroku-postbuild": "npm run build"
+//   },
