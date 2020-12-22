@@ -17,3 +17,21 @@ export const getUniqueValues = (data,type) => {
     .sort((a, b) => a - b);
   return['All', ...new Set(unique)];
 }
+
+// for localhost
+  // "scripts": {
+  //   "start": "react-scripts start",
+  //   "build": "react-scripts build",
+  //   "test": "react-scripts test",
+  //   "eject": "react-scripts eject"
+  // },
+  
+//for live app
+//   "scripts": {
+//   "start": "set PORT=4200 && react-scripts start",
+//   "build": "react-scripts build",
+//   "test": "react-scripts test",
+//   "eject": "react-scripts eject",
+//   "predeploy": "npm run build",
+//   "deploy": "gh-pages -d build"
+// },
