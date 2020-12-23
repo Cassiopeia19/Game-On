@@ -13,8 +13,8 @@ import {
 import { useProductsContext } from './products_context'
 
 const initialState = {
-  filtered_products:[],
-  all_products:[],
+ filtered_products:{games: []},
+  all_products:{games: []},
   grid_view:true,
   sort:'price-lowest',
   filters: {
@@ -39,8 +39,10 @@ export const FilterProvider = ({ children }) => {
   },[products])
 
   useEffect(() => {
-    dispatch({type:FILTER_PRODUCTS})
-    dispatch({type:SORT_PRODUCTS})
+    if (products) {
+      dispatch({type:FILTER_PRODUCTS})
+      dispatch({type:SORT_PRODUCTS})
+    }
   },[products,state.sort,state.filters])
 
   const setGridView= () => {

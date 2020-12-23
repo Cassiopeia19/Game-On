@@ -1,19 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Filters, ProductList, Sort, PageHero } from '../components'
+import { Filters, ProductList, Sort, PageHero, Loading } from '../components'
+import { useProductsContext } from '../context/products_context'
 
 const ProductsPage = () => {
+   const {products_loading} = useProductsContext();
   return (
     <main>
       <PageHero title="/games" />
       <Wrapper className="page">
         <div className="section-center products">
-          <Filters />
-          <div>
-            <Sort />
-            <ProductList />
-          </div>
-        </div>
+  {
+          products_loading ? <div><Loading /></div>
+          : <>
+            <Filters />
+            <div>
+              <Sort />
+              <ProductList />
+            </div>
+          </>
+        }
+      </div>
       </Wrapper>
     </main>
   )

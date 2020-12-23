@@ -19,7 +19,7 @@ const prices = action.payload.games.map((p) => p.price);
   
     return {...state,
       all_products: {...action.payload},
-      filtered_products: {...action.payload},
+      filtered_products: {...action.payload || []},
       filters:{...state.filters,max_price:max_price,price:max_price}
     }
   }
@@ -33,7 +33,7 @@ const prices = action.payload.games.map((p) => p.price);
     return {...state,sort: action.payload}
   }
   if(action.type === SORT_PRODUCTS) {
-    const {sort,filtered_products} = state
+   const {sort,filtered_products = {}} = state
      if (!filtered_products.games) {
     return state;
   }
@@ -63,7 +63,7 @@ const prices = action.payload.games.map((p) => p.price);
   if(action.type === FILTER_PRODUCTS) {
     const {all_products} = state
     const {text,min_age,year_published,price}= state.filters
-    let tempProducts = all_products
+    let tempProducts = {...all_products || {}}
     // filtering
     // text
     if(text) {
@@ -84,8 +84,8 @@ const prices = action.payload.games.map((p) => p.price);
       )
     }
     // price
-  //    tempProducts = tempProducts.games.filter((product) => product.price
-  //       <= price)
+    tempProducts.games = tempProducts.games.filter((product) => product.price
+        <= price) 
     return{...state,filtered_products: tempProducts}
   }
   if(action.type === CLEAR_FILTERS) {
