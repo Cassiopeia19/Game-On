@@ -66,26 +66,26 @@ const prices = action.payload.games.map((p) => p.price);
     let tempProducts = all_products
     // filtering
     // text
-    // if(text) {
-    //   tempProducts = tempProducts.games.filter((product) => {
-    //     return product.name.toLowerCase().startsWith(text)
-    //   })
-    // }
+    if(text) {
+      tempProducts.games = tempProducts.games.filter((product) => {
+        return product.name.toLowerCase().startsWith(text)
+      })
+    }
     // min_age
-    // if(min_age !='all') {
-    //   tempProducts = tempProducts.games.filter((product) => 
-    //     product.min_age === min_age
-    //   )
-    // }
+    if(min_age !='all') {
+        tempProducts.games = tempProducts.games.filter((product) => 
+        product.min_age === min_age
+      )
+    }
     // year_published
-    // if(year_published !='all') {
-    //   tempProducts = tempProducts.games.filter((product) => 
-    //     product.year_published === year_published 
-    //   )
-    // }
+    if(year_published !='all') {
+      tempProducts.games = tempProducts.games.filter((product) => 
+        product.year_published === year_published 
+      )
+    }
     // price
-     tempProducts = tempProducts.games.filter((product) => product.price
-        <= price)
+  //    tempProducts = tempProducts.games.filter((product) => product.price
+  //       <= price)
     return{...state,filtered_products: tempProducts}
   }
   if(action.type === CLEAR_FILTERS) {
