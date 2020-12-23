@@ -21,7 +21,7 @@ const Sort = () => {
           <BsList />
         </button>
       </div>
-      <p>{products.length} games found</p>
+      <p>{products.games.length} games found</p>
       <hr />
       <form>
         <label htmlFor="sort">sort by</label>
