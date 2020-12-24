@@ -8,11 +8,11 @@ import {
 
 const cart_reducer = (state, action) => {
   if(action.type === ADD_TO_CART) {
-      const {id,amount,product} = action.payload
-      const tempItem = state.cart.find((items) => items.id === id)
-      if(tempItem) {
+      const {amount,product} = action.payload
+      const itemExists = state.cart.some((items) => items.id === product.id)
+      if(itemExists) {
         const tempCart = state.cart.map((cartItem) => {
-          if(cartItem.id === id) {
+          if(cartItem.id === product.id) {
            let newAmount = cartItem.amount + amount
            if(newAmount > cartItem) {
              newAmount = cartItem
@@ -25,11 +25,11 @@ const cart_reducer = (state, action) => {
         return {...state,cart:tempCart}
       } else {
         const newItem = {
-          id:id,
-          name:id.product.name,
+          id:product.id,
+          name:product.name,
           amount,
-          image:id.product.image_url,
-          price:id.product.price
+          image:product.image_url,
+          price:product.price
         }
     return {...state,cart:[...state.cart,newItem]}
   }

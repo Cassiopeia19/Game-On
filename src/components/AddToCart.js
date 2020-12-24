@@ -6,37 +6,37 @@ import { useCartContext } from '../context/cart_context'
 import AmountButtons from './AmountButtons'
 import products_reducer from '../reducers/products_reducer'
 
-const AddToCart = (id,product) => {
+const AddToCart = ({product}) => {
  const {addToCart} = useCartContext()
 
   const [amount,setAmount] = useState(1);
 
   const increase = () => {
     setAmount((oldAmount) => {
-    let tempAmount = oldAmount + 1 
+    let tempAmount = oldAmount + 1
     return tempAmount
     })
   }
 
   const decrease = () => {
   setAmount((oldAmount) => {
-    let tempAmount = oldAmount - 1 
+    let tempAmount = oldAmount - 1
     if(tempAmount < 1) {
       tempAmount = 1
     }
     return tempAmount
     })
   }
- 
+
   return (
 <Wrapper>
   <div className='btn-container'>
     <AmountButtons
     amount={amount}
     increase={increase}
-    decrease={decrease} 
+    decrease={decrease}
     />
-    <Link to="/cart" className="btn" onClick={()=>addToCart(id,amount,product)}>
+    <Link to="/cart" className="btn" onClick={()=>addToCart(amount,product)}>
       add to cart
     </Link>
   </div>
